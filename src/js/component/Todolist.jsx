@@ -15,17 +15,21 @@ const TodoList = () => {
     return (
         <div className="Container text-center vh-100  d-flex align-items-center gap-3 flex-column">
         <h1>Todo List</h1>
-            <input className="text-dark" type="text" id="task" value={task} onKeyDown={addTask} onChange={handleTask}/>
+            <input className="text-dark" type="text" id="task" value={task} onKeyDown={addTask} onChange={handleTask} placeholder=' What needs to be done?'/>  
             <div>
                 <ul>
                 {
                     listTask.map((task, index) => {
-                        return <li key={index}> {task} </li>
+                        return (
+                        <li key={index}> {task} </li>
+                        )
                     })
                 }
                 </ul>
             </div>
+            <div className='card m-1'>{listTask.length} pending items</div>    
         </div>
+        
   );
 };
 
