@@ -4,7 +4,7 @@ import TodoList from "./Todolist"
 //create your first component
 const Home = () => {
 	return (
-		<div className="">
+		<div className="Container text-center">
 			<TodoList/>
 		</div>
 	);
