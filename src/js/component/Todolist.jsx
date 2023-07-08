@@ -12,6 +12,8 @@ const TodoList = () => {
             setTask("");
         }
     }
+    const handlerButtomDelete = (indexid) => setListTask(listTask.filter((task, index)=> (indexid != index)))
+
     return (
         <div className="Container text-center vh-100  d-flex align-items-center gap-3 flex-column">
         <h1>Todo List</h1>
@@ -21,7 +23,7 @@ const TodoList = () => {
                 {
                     listTask.map((task, index) => {
                         return (
-                        <li key={index}> {task} </li>
+                        <li key={index}> {task} <button type='button' className='btn-close btn-danger' onClick={(event) => handlerButtomDelete(index)}></button> </li>
                         )
                     })
                 }
@@ -34,3 +36,4 @@ const TodoList = () => {
 };
 
 export default TodoList;
+
