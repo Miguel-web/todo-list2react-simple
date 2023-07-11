@@ -29,7 +29,9 @@ const TodoList = () => {
                 }
                 </ul>
             </div>
-            <div className='card m-1'>{listTask.length} pending items</div>    
+            <div className='card m-1'>{listTask.length === 0
+              ? "No tasks, Hola Jose..."
+              : listTask.length + " Item Left"}</div>    
         </div>
         
   );
