@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+// https://assets.breatheco.de/apis/fake/todos/user/miguelgilweb
 
 const TodoList = () => {
     const [task, setTask] = useState("");
@@ -23,7 +24,7 @@ const TodoList = () => {
                 {
                     listTask.map((task, index) => {
                         return (
-                        <li key={index}> {task} <button type='button' className='btn-close btn-danger' onClick={(event) => handlerButtomDelete(index)}></button> </li>
+                        <li key={index}> {task} <button type='button' className='btn btn-close btn-danger' onClick={(event) => handlerButtomDelete(index)}></button> </li>
                         )
                     })
                 }
