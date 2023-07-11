@@ -12,9 +12,9 @@
 */
 
 .btn{
-    display: none;
+    visibility: hidden;
 }
 li:hover .btn{
-    display:inline
+    visibility: visible;
 }
 
