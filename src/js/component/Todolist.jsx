@@ -16,7 +16,7 @@ const TodoList = () => {
     const handlerButtomDelete = (indexid) => setListTask(listTask.filter((task, index)=> (indexid != index)))
 
     return (
-        <div className="Container text-center vh-100  d-flex align-items-center gap-3 flex-column">
+        <div className="text-center d-flex align-items-center gap-3 flex-column">
         <h1>Todo List</h1>
             <input className="text-dark" type="text" id="task" value={task} onKeyDown={addTask} onChange={handleTask} placeholder=' What needs to be done?'/>  
             <div>
@@ -24,15 +24,15 @@ const TodoList = () => {
                 {
                     listTask.map((task, index) => {
                         return (
-                        <li key={index}> <h2>{task} <button type='button' className='btn btn-close' onClick={(event) => handlerButtomDelete(index)}></button></h2> </li>
+                        <li key={index}> <h3>{task} <button type='button' className='btn btn-close' onClick={(event) => handlerButtomDelete(index)}></button></h3> </li>
                         )
                     })
                 }
                 </ul>
             </div>
-            <div className='card m-1'>{listTask.length === 0
-              ? "No tasks, Hola Jose..."
-              : listTask.length + " Item Left"}</div>    
+            <div className='m-1'> <p>{listTask.length === 0
+              ? "No tasks, (😊Hola Jose...)"
+              : listTask.length + " Item Left"}</p></div>    
         </div>
         
   );
