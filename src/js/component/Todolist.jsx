@@ -8,9 +8,9 @@ const TodoList = () => {
         setTask(event.target.value); 
     } 
     const addTask = (event) => {
-        if (event.key == "Enter") {
+        if (event.key == 'Enter' && task.trim() !== '') {
             setListTask([...listTask, task]);
-            setTask("");
+            setTask('');
         }
     }
     const handlerButtomDelete = (indexid) => setListTask(listTask.filter((task, index)=> (indexid != index)))
