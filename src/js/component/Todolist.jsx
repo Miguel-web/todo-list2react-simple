@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-// https://fake-todo-list-52f9a4ed80ce.herokuapp.com/todos/user
+const API_URL= "https://fake-todo-list-52f9a4ed80ce.herokuapp.com/todos/user/miguelweb"
 
 const TodoList = () => {
     const [task, setTask] = useState("");
@@ -13,7 +13,36 @@ const TodoList = () => {
             setTask('');
         }
     }
-    
+    const createUser = async () => {
+          try {
+            const requestOpt = {
+                method: "POST",
+                body: JSON.stringify([]),
+                headers: {
+                    "Content-Type": "application/json"
+                }}
+            const response = await fetch(API_URL, requestOpt)
+                if (response.status == 201) {
+                    // aqui llamo las tareas del ursuario
+                } else if (response.status == 400) {
+                    // el usuario existe , puedo llamar las tareas
+                }
+
+        } catch (error) { 
+            console.log(error)
+        }
+    }
+
+    const getAllUserTasks = async () => {
+            try {
+                const response = await fetch(API_URL)
+                if (response.ok) {}
+
+            } catch (error) {
+             console.log(error)
+            }
+    }
+
     const handlerButtomDelete = (indexid) => setListTask(listTask.filter((task, index)=> (indexid != index)))
 
     return (
