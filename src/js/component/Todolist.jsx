@@ -41,7 +41,7 @@ const TodoList = () => {
             if (response.ok) {
                 // aqui llamo las tareas del ursuario
                 getAllUserTasks()
-            } else if (response.status == 400) {
+            } else if (response.status == 404) {
                 // el usuario existe , puedo llamar las tareas
                 getAllUserTasks()
             }
@@ -56,7 +56,7 @@ const TodoList = () => {
             if (response.ok) {
                 const body = await response.json()
                 setListTask(body)
-            } else if (response.status == 400) {
+            } else if (response.status == 404) {
                 // el usuarion no existe , puedo crearlo
                 createUser()
             }
